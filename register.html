@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event management project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/event.css">
+    <link rel="stylesheet" href="css/pass.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Events Portal</div>
+
+    <div class="menu-icon" id="menuIcon">⋮</div>
+
+    <nav id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About portal</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="event.html" class="nav-link">Events</a>
+    </nav>
+</header>
+    <div class="container">
+        <h2>Student Registration</h2>
+        <form id="registerForm">
+            <input type="text" id="name" placeholder="Student Names"  required>
+            <input type="text" id="roll" placeholder="Roll Number" required>
+            <input type="text" id="dept" placeholder="Department"  required>
+			
+			
+			<select id="events" required>
+
+            <option value="">Select Event</option>
+			<option value="Freshers party">Freshers party</option>
+            <option value="Academic conference">Academic conference</option>
+            <option value="Faculty and students development program">Faculty and students development program</option>
+            <option value="Sangathan">Sangathan </option>
+            <option value="Amity youth fest">Amity youth fest</option>
+            <option value="Convocation fest">Convocation fest</option>
+            </select>
+			
+            <button type="submit">Register Student</button>
+        </form>
+		<div id="msgBox" style="display:none;margin-bottom:10px;padding:10px;border-radius:6px;font-weight:bold;text-align:center;"></div>
+
+    </div>
+<!--registerd student section-->
+    <div class="container">
+        <h2>Registered Students</h2>
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No.</th>
+                    <th>Department</th>
+                    <th>Generate Pass</th>
+					<th>Event</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button id="downloadExcel">Download Excel File</button>
+    </div>
+
+
+ <div id="passModal" class="modal">
+<div class="modal-content visiting-card" id="passContent">
+<span id="closeModal">&times;</span>
+
+<div class="card-header">
+
+<div class="logo-box">
+<img src="images/logo.png">
+<div class="logo-text">AMITY UNIVERSITY</div>
+</div>
+
+<div class="pass-title">EVENT PASS</div>
+</div>
+<div class="card-body">
+<div class="avatar">👤</div>
+<div class="info">
+<div class="name" id="passName">Name</div>
+<div class="roll" id="passRoll">Roll No</div>
+<div class="dept" id="passDept">Department</div>
+<div class="event" id="passEvent">Event Name</div>
+</div>
+</div>
+<div class="card-footer">
+VALID ENTRY PASS
+</div>
+<div class="watermark">AMITY</div>
+</div>
+<button id="printPass">Print / Save as PDF</button>
+</div>
+
+
+<footer>
+<div class="footer-container">
+<div class="footer-left">
+<h3>Event Management System</h3>
+<p>We help you explore, join and manage events easily. Register for events, generate entry passes and stay updated with upcoming programs.</p>
+</div>
+
+<div class="footer-links">
+<a href="#">About Us</a>
+<a href="#">Contact Support</a>
+<a href="#">Register Event</a>
+<a href="#">Download Pass</a>
+</div>
+
+<div class="footer-right">
+<p>Address: Patna, Bihar, India</p>
+<p>Phone: +91 62045 30519</p>
+<p>Email: hrishab@gmail.com</p>
+<p>&copy; 2025 Event Management Project</p>
+</div>
+</div>
+</footer>
+   <script src="logic.js"></script>
+</body>
+</html>
+
+
+<script>
+// AUTO SELECT EVENT FROM URL
+const params = new URLSearchParams(window.location.search);
+const eventFromUrl = params.get("event");
+
+if(eventFromUrl){
+    document.getElementById("events").value = eventFromUrl;
+}
+
+</script>

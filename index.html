@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/event.css">
+<link rel="stylesheet" href="css/pass.css">
+</head>
+
+<body>
+<header>
+    <div class="logo">Events Portal</div>
+    <div class="menu-icon" id="menuIcon">⋮</div>
+    <nav id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="service.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About portal</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="event.html" class="nav-link">Events</a>
+    </nav>
+</header>
+
+
+<div class="events-section">
+<h2 class="events-title">Upcoming Events</h2>
+
+<div class="events-grid">
+<div class="event-card">
+<img src="images/event6.jpeg" class="event-img">
+<div class="event-content">
+<h3>Freshers party</h3>
+<div class="event-info">📅 Date: 05 Jan 2026</div>
+<div class="event-info">⏰ Time: 11:00 AM</div>
+<div class="event-info">📍 Location: Business Center</div>
+<a href="register.html?event=Freshers party" class="event-btn" class="event-btn">Join Event</a>
+</div>
+</div>
+<div class="event-card">
+<img src="images/event1.jpeg" class="event-img">
+<div class="event-content">
+<h3>Academic conference</h3>
+<div class="event-info">📅 Date: 28 Nov 2025</div>
+<div class="event-info">⏰ Time: 05:00 PM</div>
+<div class="event-info">📍 Location: City Banquet Hall</div>
+<a href="register.html?event=Academic conference" class="event-btn" class="event-btn">Join Event</a>
+</div>
+</div>
+<div class="event-card">
+<img src="images/event2.jpeg" class="event-img">
+<div class="event-content">
+<h3>Faculty and students development program</h3>
+<div class="event-info">📅 Date: 10 Dec 2025</div>
+<div class="event-info">⏰ Time: 07:00 PM</div>
+<div class="event-info">📍 Location: Royal Garden</div>
+<a href="register.html?event=Faculty and students development program" class="event-btn" class="event-btn">Join Event</a>
+</div>
+</div>
+<div class="event-card">
+<img src="images/event3.jpeg" class="event-img">
+<div class="event-content">
+<h3>Sangathan </h3>
+<div class="event-info">📅 Date: 05 Jan 2026</div>
+<div class="event-info">⏰ Time: 11:00 AM</div>
+<div class="event-info">📍 Location: Business Center</div>
+<a href="register.html?event=Sangathan " class="event-btn" class="event-btn">Join Event</a>
+</div>
+</div>
+<div class="event-card">
+<img src="images/event4.jpeg" class="event-img">
+<div class="event-content">
+<h3>Amity youth fest</h3>
+<div class="event-info">📅 Date: 28 Nov 2025</div>
+<div class="event-info">⏰ Time: 05:00 PM</div>
+<div class="event-info">📍 Location: City Banquet Hall</div>
+<a href="register.html?event=Amity youth fest" class="event-btn" class="event-btn">Join Event</a>
+</div>
+</div>
+<div class="event-card">
+<img src="images/event5.jpeg" class="event-img">
+<div class="event-content">
+<h3>Convocation fest</h3>
+<div class="event-info">📅 Date: 10 Dec 2025</div>
+<div class="event-info">⏰ Time: 07:00 PM</div>
+<div class="event-info">📍 Location: Royal Garden</div>
+<a href="register.html?event=Convocation fest" class="event-btn" class="event-btn">Join Event</a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-container">
+<div class="footer-left">
+<h3>Event Management System</h3>
+<p>We help you explore, join and manage events easily. Register for events, generate entry passes and stay updated with upcoming programs.</p>
+</div>
+
+<div class="footer-links">
+<a href="#">About Us</a>
+<a href="#">Contact Support</a>
+<a href="#">Register Event</a>
+<a href="#">Download Pass</a>
+</div>
+
+<div class="footer-right">
+<p>Address: Patna, Bihar, India</p>
+<p>Phone: +91 62045 30519</p>
+<p>Email: hrishab@gmail.com</p>
+<p>&copy; 2025 Event Management Project</p>
+</div>
+</div>
+</footer>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'http://localhost:5678/webhook/8f46b695-e9c4-4d4a-b618-15aebaaa5507/chat'
+	});
+</script>
+</body>
+</html>
+
+<script>
+let menuIcon=document.getElementById("menuIcon");
+let navMenu=document.getElementById("navMenu");
+let open=false;
+
+menuIcon.onclick=function(){
+    navMenu.classList.toggle("active");
+    if(open){
+        menuIcon.innerHTML="⋮";
+        open=false;
+    }else{
+        menuIcon.innerHTML="➜";
+        open=true;
+    }
+};
+
+</script>
+

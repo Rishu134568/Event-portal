@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/event.css">
+<link rel="stylesheet" href="css/pass.css">
+<link rel="stylesheet" href="css/form.css">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("DwR4i514j5NiyYP9n"); 
+})();
+</script>
+</head>
+<body>
+
+<header>
+    <div class="logo">Events Portal</div>
+
+    <div class="menu-icon" id="menuIcon">⋮</div>
+
+    <nav id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About portal</a>
+        <a href="contact.html" class="nav-link active">Contact Us</a>
+        <a href="event.html" class="nav-link ">Events</a>
+    </nav>
+</header>
+
+<div class="contact-wrapper">
+
+    <div class="contact-title">Contact Us</div>
+    <div class="sub-title">We will get back to you shortly</div>
+
+    <form id="contactForm">
+        <div class="form-group">
+            <label>Name *</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label>Contact Number*</label>
+            <input type="text" name="contact" placeholder="Enter your contact number" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email*</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Message*</label>
+            <textarea rows="4" name="message" placeholder="Type your message..." required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p id="result" ></p>
+</div>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.send("service_20o7ok4", "template_xa5djne", {  
+        name: this.name.value,
+        contact: this.contact.value,
+        email: this.email.value,
+        message: this.message.value,
+        website_name: "Events Portal"   // <-- Yahan apna website ka naam likho
+    })
+	
+	
+	emailjs.send("service_20o7ok4", "template_gu1ccmi", {  
+        name: this.name.value,
+        contact: this.contact.value,
+        email: this.email.value,
+        message: this.message.value,
+        website_name: "Events Portal"   // <-- Yahan apna website ka naam likho
+    })
+	
+    .then(function(response) {
+        let res = document.getElementById("result");
+        res.innerHTML = "<span style='color:green;font-weight:bold;'>Message Sent Successfully!</span>";
+        res.style.display = "block";
+
+        setTimeout(() => {
+            res.style.display = "none";
+            res.innerHTML = "";
+        }, 5000);
+
+    }, function(error) {
+        let res = document.getElementById("result");
+        res.innerHTML = "<span style='color:red;font-weight:bold;'>Error sending message.</span>";
+        res.style.display = "block";
+
+        setTimeout(() => {
+            res.style.display = "none";
+            res.innerHTML = "";
+        }, 5000);
+    });
+});
+</script>
+
+
+
+
+
+<footer>
+<div class="footer-container">
+<div class="footer-left">
+<h3>Event Management System</h3>
+<p>We help you explore, join and manage events easily. Register for events, generate entry passes and stay updated with upcoming programs.</p>
+</div>
+
+<div class="footer-links">
+<a href="#">About Us</a>
+<a href="#">Contact Support</a>
+<a href="#">Register Event</a>
+<a href="#">Download Pass</a>
+</div>
+
+<div class="footer-right">
+<p>Address: Patna, Bihar, India</p>
+<p>Phone: +91 62045 30519</p>
+<p>Email: hrishab@gmail.com</p>
+<p>&copy; 2025 Event Management Project</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
+<script>
+let menuIcon=document.getElementById("menuIcon");
+let navMenu=document.getElementById("navMenu");
+let open=false;
+
+menuIcon.onclick=function(){
+    navMenu.classList.toggle("active");
+    if(open){
+        menuIcon.innerHTML="⋮";
+        open=false;
+    }else{
+        menuIcon.innerHTML="➜";
+        open=true;
+    }
+};
+
+</script>

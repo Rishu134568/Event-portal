@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Best Services </title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/event.css">
+<link rel="stylesheet" href="css/pass.css">
+</head>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Events Portal</div>
+
+    <div class="menu-icon" id="menuIcon">⋮</div>
+
+    <nav id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="service.html" class="nav-link active">Services</a>
+        <a href="about.html" class="nav-link">About portal</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="event.html" class="nav-link">Events</a>
+    </nav>
+</header>
+
+
+
+<div class="events-section">
+<h2 class="events-title">Our Best Services </h2>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+</div>
+
+
+
+<footer>
+<div class="footer-container">
+<div class="footer-left">
+<h3>Event Management System</h3>
+<p>We help you explore, join and manage events easily. Register for events, generate entry passes and stay updated with upcoming programs.</p>
+</div>
+
+<div class="footer-links">
+<a href="#">About Us</a>
+<a href="#">Contact Support</a>
+<a href="#">Register Event</a>
+<a href="#">Download Pass</a>
+</div>
+
+<div class="footer-right">
+<p>Address: Patna, Bihar, India</p>
+<p>Phone: +91 62045 30519</p>
+<p>Email: hrishab@gmail.com</p>
+<p>&copy; 2025 Event Management Project</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
+<script>
+let menuIcon=document.getElementById("menuIcon");
+let navMenu=document.getElementById("navMenu");
+let open=false;
+
+menuIcon.onclick=function(){
+    navMenu.classList.toggle("active");
+    if(open){
+        menuIcon.innerHTML="⋮";
+        open=false;
+    }else{
+        menuIcon.innerHTML="➜";
+        open=true;
+    }
+};
+
+</script>

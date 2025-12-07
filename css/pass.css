@@ -1,0 +1,154 @@
+*{
+-webkit-print-color-adjust:exact!important;
+print-color-adjust:exact!important;
+}
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+#closeModal{
+color:red!important;
+font-size:24px;
+font-weight:bold;
+cursor:pointer;
+}
+
+
+
+.modal-content{
+background:transparent;
+padding:0;
+border-radius:0;
+position:relative;
+font-family:Poppins,Arial,sans-serif;
+}
+
+.visiting-card{
+width:350px;
+height:200px;
+background:linear-gradient(135deg,#ff6a00,#ff9f0a,#6a11cb,#2575fc,#00c9a7);
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.45);
+color:#fff;
+position:relative;
+margin-top: 20px;
+margin-left: 20px;
+}
+
+/* Header */
+.card-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(0,0,0,0.35);
+padding:8px 12px;
+}
+
+.logo-box{
+background:#fff;
+border-radius:6px;
+padding:3px 6px;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.logo-box img{
+height:28px;
+width:auto;
+}
+
+.logo-text{
+font-size:13px;
+font-weight:bold;
+color:#000;
+}
+
+.pass-title{
+font-size:14px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+/* Body */
+.card-body{
+display:flex;
+align-items:center;
+padding:12px;
+gap:12px;
+background:rgba(255,255,255,0.12);
+border-top:1px solid rgba(255,255,255,0.2);
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.avatar{
+width:55px;
+height:55px;
+border-radius:50%;
+background:#fff;
+color:#ff6a00;
+font-size:26px;
+font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
+border:2px solid #fff;
+}
+
+.name{
+font-size:16px;
+font-weight:700;
+}
+.roll,.dept,.event{
+font-size:12px;
+margin-top:3px;
+}
+
+/* Watermark */
+.watermark{
+position:absolute;
+right:10px;
+bottom:8px;
+font-size:32px;
+font-weight:900;
+opacity:0.15;
+}
+
+/* Footer */
+.card-footer{
+padding:8px 12px;
+border-top:1px dashed rgba(255,255,255,0.6);
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+/* Print Button */
+#printPass{
+margin-top:10px;
+padding:10px;
+margin-left:2%
+
+}
+
+@page{
+size:350px 200px;
+margin:0;
+}
+
+@media print{
+body{margin:0;padding:0;}
+#closeModal,#printPass{display:none!important;}
+#closeModal,#printPass{display:none!important;}
+.modal{background:#fff;}
+.modal-content{box-shadow:none;}
+}

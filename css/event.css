@@ -1,0 +1,41 @@
+
+/* EVENTS */
+.events-section{max-width:1100px;margin:40px auto;padding:10px;text-align:center}
+.events-title{font-size:30px;color:#1a237e;font-weight:bold;margin-bottom:10px}
+
+.events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.event-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+    text-align:left;
+}
+.event-card:hover{transform:translateY(-6px)}
+
+.event-img{width:100%;height:180px;object-fit:cover}
+.event-content{padding:18px}
+.event-content h3{margin:0 0 8px;color:#1a237e;font-size:20px}
+.event-info{font-size:14px;color:#555;margin:3px 0}
+
+.event-btn{
+    display:block;
+    margin-top:12px;
+    width:100%;
+    background:#1a237e;
+    color:#fff;
+    padding:12px;
+    text-align:center;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:15px;
+}
+.event-btn:hover{background:#0d47a1}
+
+.nav-link.active{
+    color:red !important;
+    font-weight:700 !important;
+    border-bottom:2px solid #007bff;
+}
+

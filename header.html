@@ -1,0 +1,132 @@
+<style>
+/* ===== NAVBAR MODERN DESIGN ===== */
+header{
+    background:linear-gradient(45deg,#0d47a1,#1a237e);
+    color:#ffeb3b;
+    padding:14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 3px 15px rgba(0,0,0,0.2);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+/* 3 Dot Menu Button */
+.menu-icon{
+    font-size:26px;
+    cursor:pointer;
+    background:rgba(255,255,255,0.1);
+    padding:8px 14px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.menu-icon:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* Slide Menu */
+nav{
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:260px;
+    height:100vh;
+    background:#0d1117;
+    padding-top:70px;
+    transition:0.4s ease;
+    box-shadow:-5px 0 15px rgba(0,0,0,0.4);
+}
+
+nav a{
+    display:block;
+    color:#ffeb3b;
+    text-decoration:none;
+    padding:15px 25px;
+    font-size:16px;
+    letter-spacing:.4px;
+    border-bottom:1px solid #1e1e1e;
+    transition:.2s;
+}
+
+nav a:hover{
+    background:#1a237e;
+    padding-left:35px;
+}
+
+/* Active */
+nav.active{
+    right:0;
+}
+
+/* Desktop View */
+@media(min-width:769px){
+    nav{
+        position:static;
+        height:auto;
+        width:auto;
+        background:none;
+        box-shadow:none;
+        padding:0;
+        display:flex;
+        gap:25px;
+    }
+
+    nav a{
+        border:none;
+        padding:0;
+        color:#ffeb3b;
+		text-decoration:none!important;
+        border-bottom:none!important;
+		font-size: 20px;
+    }
+
+    nav a:hover{
+        background:none;
+        padding-left:0;
+        text-decoration:underline;
+    }
+}
+
+
+</style>
+<header>
+    <div class="logo">Events Portal</div>
+
+    <!-- 3 Dot + Arrow -->
+    <div class="menu-icon" id="menuIcon">⋮</div>
+
+    <nav id="navMenu">
+        <a href="index.php">Home</a>
+		<a href="#">Services</a>
+        <a href="about.php">About portal</a>
+        <a href="contact.php">Contact Us</a>
+        <a href="event.php">Events</a>
+    </nav>
+</header>
+
+<script>
+let menuIcon=document.getElementById("menuIcon");
+let navMenu=document.getElementById("navMenu");
+let open=false;
+
+menuIcon.onclick=function(){
+    navMenu.classList.toggle("active");
+    if(open){
+        menuIcon.innerHTML="⋮";
+        open=false;
+    }else{
+        menuIcon.innerHTML="➜";
+        open=true;
+    }
+};
+
+</script>
